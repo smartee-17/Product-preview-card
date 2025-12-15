@@ -1,0 +1,466 @@
+@font-face {
+  font-family: 'Fraunces';
+  src: url(Fraunces/static/Fraunces_72pt_Soft-Regular.ttf)
+  format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url(font-1/static/Montserrat-Regular.ttf)
+  format('truetype');
+}
+
+@layer base, responsive, components, utilities;
+
+@layer base{
+  *,
+  *::before,
+  *::after{
+    padding: var(--space-0);
+    margin: var(--space-0);
+    box-sizing: border-box;
+
+    /* outline: 1px solid lime;  */
+  }
+
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+
+    font-family: var(--font-body);
+    font-size:  var(--fs-xs);
+    font-weight: 500;
+
+    color: var(--Grey);
+    background-color: var(--Cream);
+  }
+
+  main{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+
+    width: var(--main-width);
+    height: auto;
+    margin: var(--space-2);
+  }
+}
+
+@layer responsive{
+
+  :root {
+
+    /* Color */
+    --Green-500: hsl(158, 36%, 37%);
+    --Green-700: hsl(158, 42%, 18%);
+
+    --Black: hsl(212, 21%, 14%);
+    --Grey: hsl(228, 12%, 48%);
+    --Cream: hsl(30, 38%, 92%);
+    --White: hsl(0, 0%, 100%);
+
+    /* Font family */
+    --font-heading: 'Fraunces', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+
+
+    /* Typography */
+    --fs-xs: 0.8rem;   /* 12.8px */
+    --fs-sm: 0.9rem;   /* 14.4px */
+    --fs-md: 1rem;     /* 16px */
+    --fs-lg: 1.1rem;   /* 17.6px */
+    --fs-xl: 1.25rem;  /* 20px */
+    --fs-2xl: 1.5rem;  /* 24px */
+    --fs-3xl: 1.75rem; /* 28px */
+
+    /* ========== SPACING (4px + 8px system in REM) ========== */
+    --space-0: 0rem;        /* 0px  */
+    --space-1: 0.25rem;     /* 4px  */
+    --space-2: 0.5rem;      /* 8px  */
+    --space-3: 1rem;        /* 16px */
+    --space-4: 1.5rem;      /* 24px */
+    --space-5: 2rem;        /* 32px */
+    --space-6: 2.5rem;      /* 40px */
+    --space-7: 3rem;        /* 48px */
+    --space-8: 3.5rem;      /* 56px */
+    --space-9: 4rem;        /* 64px */
+
+    /* Width */
+    --w-1: 20vw;   /* very small element  */
+    --w-2: 30vw;   /* small cards        */
+    --w-3: 40vw;   /* small sections     */
+    --w-4: 50vw;   /* half width         */
+    --w-5: 60vw;   /* medium content     */
+    --w-6: 70vw;   /* large content      */
+    --w-7: 80vw;   /* wide panels        */
+    --w-8: 90vw;   /* very wide          */
+    --w-full: 100vw;  /* full width */
+
+
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;  /* 4px */
+    --radius-md: 0.5rem;   /* 8px */
+    --radius-lg: 0.75rem;  /* 12px */
+    --radius-xl: 1rem;     /* 16px */
+    --radius-round: 50%;   /* circular elements */
+
+    /* Z index */
+    --z-header: 1000;
+    --z-sidebar: 900;
+    --z-modal: 1100;
+    --z-tooltip: 1200;
+
+    /* ========= SHADOW SYSTEM ========= */
+    --shadow-1: 0 1px 2px rgba(0,0,0,0.08);
+    --shadow-2: 0 2px 4px rgba(0,0,0,0.10);
+    --shadow-3: 0 4px 8px rgba(0,0,0,0.12);
+    --shadow-4: 0 8px 16px rgba(0,0,0,0.14);
+
+    /* ========= MOTION ========= */
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: 150ms var(--ease);
+    --transition-medium: 250ms var(--ease);
+    --transition-slow: 400ms var(--ease);
+
+    /* Grid system */
+    --grid-article: 1fr;
+
+    /* Main width */
+    --main-width: var(--w-8);
+
+   
+    /* Background image */
+    --image-div: url(./images/image-product-mobile.jpg);
+
+    --image-div-height: 60vh;
+
+    --image-size: cover;
+    
+    /* Flex */
+    --flex-direction: column;
+
+    /* para */
+    --para-align: left;
+  }
+
+  /* Smaller Screen */
+  @media (max-width: 18em) {
+    :root{
+       /* Typography */
+    --fs-xs: 0.8em;   /* 12.8px */
+    --fs-sm: 0.9em;   /* 14.4px */
+    --fs-md: 1em;     /* 16px */
+    --fs-lg: 1.1em;   /* 17.6px */
+    --fs-xl: 1.25em;  /* 20px */
+    --fs-2xl: 1.5em;  /* 24px */
+    --fs-3xl: 1.75em; /* 28px */
+
+    /* Width */
+    --w-1: 30vw;   /* very small element  */
+    --w-2: 40vw;   /* small cards        */
+    --w-3: 50vw;   /* small sections     */
+    --w-4: 60vw;   /* half width         */
+    --w-5: 70vw;   /* medium content     */
+    --w-6: 80vw;   /* large content      */
+    --w-7: 90vw;   /* wide panels        */
+    --w-8: 90vw;   /* very wide          */
+    --w-full: 100vw;  /* full width */
+
+    /* ========== SPACING (4px + 8px system in REM) ========== */
+    --space-0: 0em;        /* 0px  */
+    --space-1: 0.25em;     /* 4px  */
+    --space-2: 0.5em;      /* 8px  */
+    --space-3: 1em;        /* 16px */
+    --space-4: 1.5em;      /* 24px */
+    --space-5: 2em;        /* 32px */
+    --space-6: 2.5em;      /* 40px */
+    --space-7: 3em;        /* 48px */
+    --space-8: 3.5em;      /* 56px */
+    --space-9: 4em;        /* 64px */
+
+
+    /* Main width */
+    --main-width: 120%;
+
+    /* image div */
+    --image-div-height: 100vh;
+
+    /* para */
+    --para-align: center;
+    }
+
+    
+  }
+
+    /* Tablet */
+@media (min-width: 43em) {
+  :root {
+    --fs-xs: calc(0.8rem + 0.2vw);
+    --fs-sm: calc(0.9rem + 0.3vw);
+    --fs-md: calc(1rem + 0.4vw);
+    --fs-lg: calc(1.1rem + 0.5vw);
+    --fs-xl: calc(1.25rem + 0.6vw);
+    --fs-2xl: calc(1.5rem + 0.8vw);
+    --fs-3xl: calc(1.75rem + 1vw);
+
+    /* Spacing */
+    --space-0: 0rem;
+    --space-1: calc(0.25rem * 1.1);
+    --space-2: calc(0.5rem * 1.1);
+    --space-3: calc(1rem * 1.1);
+    --space-4: calc(1.5rem * 1.1);
+    --space-5: calc(2rem * 1.1);
+    --space-6: calc(2.5rem * 1.1);
+    --space-7: calc(3rem * 1.1);
+    --space-8: calc(3.5rem * 1.1);
+    --space-9: calc(4rem * 1.1);
+
+    /* Width */
+    --w-1: 15vw;
+    --w-2: 25vw;
+    --w-3: 35vw;
+    --w-4: 45vw;
+    --w-5: 55vw;
+    --w-6: 65vw;
+    --w-7: 75vw;
+    --w-8: 85vw;
+    --w-full: 100vw;
+
+
+
+    /* Border radius */
+    --radius-sm: calc(0.25rem + 0.2vw);
+    --radius-md: calc(0.5rem + 0.3vw);
+    --radius-lg: calc(0.75rem + 0.4vw);
+    --radius-xl: calc(1rem + 0.5vw);
+
+    /* Grid system */
+    --grid-article: repeat(2, 1fr);
+
+    /* Background image */
+    --image-div: url(./images/image-product-desktop.jpg);
+
+    --image-div-height: 40vh;
+
+    /* Flex */
+    --flex-direction: row;
+
+  }
+}
+
+/* Laptop */
+@media (min-width: 64em) {
+  :root {
+    --fs-xs: calc(0.8rem + 0.4vw);
+    --fs-sm: calc(0.9rem + 0.5vw);
+    --fs-md: calc(1rem + 0.6vw);
+    --fs-lg: calc(1.1rem + 0.7vw);
+    --fs-xl: calc(1.25rem + 0.9vw);
+    --fs-2xl: calc(1.5rem + 1.2vw);
+    --fs-3xl: calc(1.75rem + 1.5vw);
+
+    /* Spacing */
+    --space-0: 0rem;
+    --space-1: calc(0.25rem * 1.25);
+    --space-2: calc(0.5rem * 1.25);
+    --space-3: calc(1rem * 1.25);
+    --space-4: calc(1.5rem * 1.25);
+    --space-5: calc(2rem * 1.25);
+    --space-6: calc(2.5rem * 1.25);
+    --space-7: calc(3rem * 1.25);
+    --space-8: calc(3.5rem * 1.25);
+    --space-9: calc(4rem * 1.25);
+
+    /* Width */
+    --w-1: 10vw;
+    --w-2: 20vw;
+    --w-3: 30vw;
+    --w-4: 40vw;
+    --w-5: 50vw;
+    --w-6: 60vw;
+    --w-7: 70vw;
+    --w-8: 80vw;
+    --w-full: 100vw;
+
+
+    /* Border radius */
+    --radius-sm: calc(0.25rem + 0.3vw);
+    --radius-md: calc(0.5rem + 0.4vw);
+    --radius-lg: calc(0.75rem + 0.5vw);
+    --radius-xl: calc(1rem + 0.6vw);
+
+    /* background image */
+    --image-size: cover;
+
+    /* Main width */
+    --main-width: var(--w-6) ;
+  }
+}
+
+/* Desktop */
+@media (min-width: 75em) {
+  :root {
+    --fs-xs: calc(0.8rem + 0.5vw);
+    --fs-sm: calc(0.9rem + 0.6vw);
+    --fs-md: calc(1rem + 0.7vw);
+    --fs-lg: calc(1.1rem + 0.9vw);
+    --fs-xl: calc(1.25rem + 1vw);
+    --fs-2xl: calc(1.5rem + 1.3vw);
+    --fs-3xl: calc(1.75rem + 1.5vw);
+
+    /* Spacing */
+    --space-0: 0rem;
+    --space-1: calc(0.25rem * 1.25);
+    --space-2: calc(0.5rem * 1.25);
+    --space-3: calc(1rem * 1.25);
+    --space-4: calc(1.5rem * 1.25);
+    --space-5: calc(2rem * 1.25);
+    --space-6: calc(2.5rem * 1.25);
+    --space-7: calc(3rem * 1.25);
+    --space-8: calc(3.5rem * 1.25);
+    --space-9: calc(4rem * 1.25);
+
+      /* Border radius */
+    --radius-sm: calc(0.25rem + 0.3vw);
+    --radius-md: calc(0.5rem + 0.4vw);
+    --radius-lg: calc(0.75rem + 0.5vw);
+    --radius-xl: calc(1rem + 0.6vw);
+  }
+  
+}
+
+}
+
+@layer components{
+  article{
+    display: flex;
+    flex-direction: var(--flex-direction);   
+    gap: var(--space-0);
+
+    padding: var(--space-0) var(--space-3);
+    border-radius: var(--radius-lg);
+  }
+
+  article > *{
+    flex: 1;
+  }
+
+
+  .image-div{
+    min-height: var(--image-div-height);
+
+    background-image: var(--image-div);
+    background-size: var(--image-size);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .border-image-desktop{
+    border-end-start-radius: var(--radius-lg);
+    border-start-start-radius: var(--radius-lg);
+  }
+
+  .border-image-mobile{
+    border-start-start-radius: var(--radius-lg);
+    border-start-end-radius: var(--radius-lg);
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+
+
+    padding: var(--space-5) var(--space-4);
+
+    background-color: var(--White);
+  }
+
+  .border-container-desktop{
+    border-end-end-radius: var(--radius-lg);
+    border-start-end-radius: var(--radius-lg);
+  }
+
+  .border-container-mobile{
+    border-end-end-radius: var(--radius-lg);
+    border-end-start-radius: var(--radius-lg);
+  }
+
+  .perfume{
+    text-transform: uppercase;
+    letter-spacing: var(--space-1);
+    font-weight: 600;
+  }
+
+  article h1{
+    width: 90%;
+
+    font-size: var(--fs-2xl);
+    line-height: 1.1;
+    font-family: var(--font-heading);
+    text-align: var(--para-align);
+
+    color: var(--Black);
+  }
+
+  .para{
+    text-align: var(--para-align);
+  }
+
+  .prices{
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .lg{
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--fs-2xl);
+
+    color: var(--Green-500);
+  }
+
+  .slash{
+    text-decoration: line-through;
+  }
+
+  .cart-btn{
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+
+    padding: var(--space-2);
+    border: none;
+    border-radius: var(--radius-sm);
+
+    font-size: var(--fs-xs);
+    
+    color: var(--White);
+    background-color: var(--Green-500);
+
+    cursor: pointer;
+    transition: background-color var(--transition-medium);
+  }
+
+  .cart-btn:hover{
+    background-color: var(--Green-700);
+  }
+
+  .attribution { 
+    color: var(--Black);
+    text-align: center; 
+  }
+
+  .attribution a { 
+    color: hsl(228, 45%, 44%); 
+  }
+}
+
+@layer utilities{
+  .flex-row{
+    display: flex;
+  }
+}

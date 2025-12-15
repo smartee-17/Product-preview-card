@@ -48,8 +48,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Solution URL](https://your-solution-url.com)
-- Live Site URL: [Live Demo](https://your-live-site-url.com)
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/responsive-product-view-card-FrOIRhjiiJ)
+- Live Site URL: [Live Demo](https://smartee-17.github.io/Product-preview-card/product-preview-card-component-main/)
 
 ## My process
 
@@ -101,8 +101,8 @@ In future projects, I plan to:
 
 ## Author
 
-- Frontend Mentor - [@Zizi](https://www.frontendmentor.io/profile/yourusername)
-- GitHub - [@Smartee-17](https://www.twitter.com/yourusername)
+- Frontend Mentor - [Zizi](https://www.frontendmentor.io/profile/smartee-17/)
+- GitHub - [@Smartee-17](https://github.com/smartee-17/)
 
 ## Acknowledgments
 
